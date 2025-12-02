@@ -1,0 +1,184 @@
+/* ---------------------------------------------------------
+   White Theme — Clean, modern, minimal, high legibility
+--------------------------------------------------------- */
+
+:root {
+  --bg: #ffffff;
+  --fg: #222222;
+  --muted: #5a5a5a;
+  --accent: #2767c5;          /* blue accent */
+  --accent-soft: rgba(39, 103, 197, 0.12);
+  --border-subtle: #d0d0d0;
+  --max-width: 1800px;
+  --page-padding: 1.5rem;
+  --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-main);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------------------------------------------------------
+   Header
+--------------------------------------------------------- */
+
+header {
+  padding: 1.5rem var(--page-padding) 0.5rem;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.4rem, 1.6vw + 1rem, 2rem);
+  letter-spacing: 0.03em;
+  color: #111;
+}
+
+.subtitle {
+  margin: 0.25rem 0 0.75rem;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* ---------------------------------------------------------
+   Disorder Input Panel
+--------------------------------------------------------- */
+
+.disorder-panel {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--page-padding) 0.75rem;
+}
+
+.disorder-input-block {
+  border: 1px solid var(--border-subtle);
+  border-radius: 0.8rem;
+  padding: 1rem 1rem 1.2rem;
+  background: #fafafa;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.disorder-input-block label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  color: var(--muted);
+}
+
+.disorder-input-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+#disorder-select {
+  flex: 1;
+  padding: 0.55rem 0.7rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-subtle);
+  background: #ffffff;
+  color: var(--fg);
+  font-size: 0.95rem;
+}
+
+#disorder-select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+/* ---------------------------------------------------------
+   Disorder Info Box
+--------------------------------------------------------- */
+
+.disorder-info {
+  margin-top: 0.9rem;
+  padding: 0.8rem 1rem;
+  border-radius: 0.75rem;
+  background: white;
+  border: 1px solid var(--border-subtle);
+}
+
+.disorder-info .placeholder {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.disorder-name {
+  margin: 0 0 0.3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+/* ---------------------------------------------------------
+   Diagram Area
+--------------------------------------------------------- */
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 0 var(--page-padding);
+}
+
+.diagram-container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--page-padding) var(--page-padding);
+  overflow-x: auto;
+  border-radius: 0.75rem;
+}
+
+/* SVG object */
+.diagram-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border-subtle);
+  border-radius: 0.5rem;
+  background: rgb(240, 249, 255);
+}
+
+/* ---------------------------------------------------------
+   SVG Highlighting Styles
+--------------------------------------------------------- */
+
+/* Blocked = muted red, low opacity */
+svg .blocked {
+  opacity: 0.25 !important;
+  stroke: #d62828 !important;
+  fill: #d62828 !important;
+}
+
+/* Upregulated = bold blue */
+svg .upregulated {
+  stroke-width: 3 !important;
+  font-weight: 700 !important;
+  stroke: var(--accent) !important;
+}
+
+/* Highlight = subtle blue outline */
+svg .highlight {
+  stroke-width: 2 !important;
+  stroke: var(--accent) !important;
+  opacity: 1 !important;
+}

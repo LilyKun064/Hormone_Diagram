@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hormones &amp; Behavior Diagram</title>
+  <!-- Use the white theme stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Hormones &amp; Behavior</h1>
+    <p class="subtitle">Developmental pathways overview</p>
+  </header>
+
+  <div class="disorder-panel">
+    <div class="disorder-input-block">
+      <label for="disorder-select"><strong>Select a disorder:</strong></label>
+      <div class="disorder-input-row">
+        <select id="disorder-select">
+          <option value="NONE">Normal</option>
+          <option value="FIVE_ALPHA_DEF">5-alpha reductase deficiency</option>
+          <option value="AIS">Androgen insensitivity syndrome</option>
+          <option value="CAH">CAH</option>
+          <option value="XX_SRY_TRANSLOCATION">XX + SRY (phenotypic male)</option>
+          <option value="XY_NO_SRY">XY no SRY (phenotypic female)</option>
+          
+          <option value="HERMAPHRODITISM">Hermaphroditism</option>
+          
+          <option value="XXY">XXY</option>
+          <option value="XYY">XYY</option>
+        </select>
+      </div>
+
+      <div id="disorder-info" class="disorder-info">
+        <p class="placeholder">
+          Pick a condition above to see a short explanation and highlights on the diagram.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <div id="diagram-container" class="diagram-container">
+      <object
+        id="hormone-diagram"
+        type="image/svg+xml"
+        data="hormones_behavior.svg"
+        class="diagram-svg"
+        aria-label="Hormones and behavior developmental pathways diagram"
+      ></object>
+    </div>
+  </main>
+
+  <!-- Main interaction logic -->
+  <script src="script.js"></script>
+</body>
+</html>
