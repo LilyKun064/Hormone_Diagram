@@ -1,12 +1,12 @@
 /* ---------------------------------------------------------
-   White Theme — Clean, modern, minimal, high legibility
+   White Theme — clean, modern, legible
 --------------------------------------------------------- */
 
 :root {
   --bg: #ffffff;
   --fg: #222222;
   --muted: #5a5a5a;
-  --accent: #2767c5;          /* blue accent */
+  --accent: #2767c5;
   --accent-soft: rgba(39, 103, 197, 0.12);
   --border-subtle: #d0d0d0;
   --max-width: 1800px;
@@ -33,14 +33,25 @@ body {
 }
 
 /* ---------------------------------------------------------
+   Floating cat logo (top-right)
+--------------------------------------------------------- */
+
+.corner-logo {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  max-height: 120px;
+  width: auto;
+  z-index: 9999;
+  pointer-events: none; /* so it doesn't block clicks */
+}
+
+/* ---------------------------------------------------------
    Header
 --------------------------------------------------------- */
 
 .page-header {
-  padding: 1.2rem var(--page-padding) 0.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding: 1.3rem var(--page-padding) 0.4rem;
   max-width: var(--max-width);
   margin: 0 auto;
 }
@@ -51,6 +62,7 @@ body {
 }
 
 h1 {
+  text-align: center;
   margin: 0;
   font-size: clamp(1.4rem, 1.6vw + 1rem, 2rem);
   letter-spacing: 0.03em;
@@ -58,21 +70,10 @@ h1 {
 }
 
 .subtitle {
+  text-align: center;
   margin: 0.25rem 0 0;
   font-size: 0.95rem;
   color: #666;
-}
-
-.header-right {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.site-logo {
-  max-height: 56px;
-  width: auto;
-  display: block;
 }
 
 /* ---------------------------------------------------------
@@ -131,7 +132,7 @@ h1 {
   margin-top: 0.9rem;
   padding: 0.85rem 1rem;
   border-radius: 0.75rem;
-  background: white;
+  background: #ffffff;
   border: 1px solid var(--border-subtle);
 }
 
@@ -148,12 +149,11 @@ h1 {
   color: #222;
 }
 
-.disorder-info pre {
+.disorder-description {
   margin: 0;
   font-size: 0.94rem;
-  line-height: 1.45;
+  line-height: 1.5;
   color: #333;
-  white-space: pre-wrap;
 }
 
 /* ---------------------------------------------------------
@@ -167,7 +167,7 @@ h1 {
   padding: 0.8rem var(--page-padding) 0;
 }
 
-.legend-card .legend-title {
+.legend-title {
   margin: 0 0 0.35rem;
   font-size: 0.98rem;
   font-weight: 600;
@@ -199,14 +199,14 @@ h1 {
   border: 1px solid #999;
 }
 
-/* Approximate the colors used in the diagram */
+/* Colors approximating the diagram's palette */
 .legend-swatch--green {
-  background: #0a7f2b; /* negative feedback arrow color */
+  background: #0a7f2b; /* negative feedback arrows */
   border-color: #0a7f2b;
 }
 
 .legend-swatch--maroon {
-  background: #7b1f34; /* stimulate/promote arrow color */
+  background: #7b1f34; /* stimulate/promote arrows */
   border-color: #7b1f34;
 }
 
@@ -220,7 +220,7 @@ h1 {
   border-color: #1565c0;
 }
 
-/* Box examples */
+/* Box-like examples */
 .legend-swatch--purple-box {
   background: rgba(128, 0, 128, 0.16);
   border: 2px solid purple;
@@ -263,20 +263,16 @@ main {
   height: auto;
   border: 1px solid var(--border-subtle);
   border-radius: 0.5rem;
-  background: rgb(196, 228, 250);
+  background: rgb(196, 228, 250); /* light blue like your original */
 }
 
 /* ---------------------------------------------------------
-   SVG Highlighting Styles (in-page; overlays live in SVG)
+   SVG Highlighting (just for safety; main styles are in SVG)
 --------------------------------------------------------- */
 
-/* Blocked class (also defined inside SVG via <style>) */
 svg .blocked {
   opacity: 0.25 !important;
 }
-
-/* Upregulated / highlight are now handled by overlay rects in script.js,
-   so we don't need heavy styling on the original nodes here. */
 
 /* ---------------------------------------------------------
    Responsive tweaks
@@ -284,16 +280,15 @@ svg .blocked {
 
 @media (max-width: 768px) {
   .page-header {
-    flex-direction: row;
-    align-items: flex-start;
+    padding-top: 1.1rem;
   }
 
   .header-left {
-    max-width: 70%;
+    max-width: 75%;
   }
 
-  .site-logo {
-    max-height: 48px;
+  .corner-logo {
+    max-height: 90px;
   }
 
   .legend-grid {

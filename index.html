@@ -4,37 +4,38 @@
   <meta charset="UTF-8" />
   <title>Hormones &amp; Behavior Diagram</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Use the white theme stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <!-- Page header with title + logo -->
+  <!-- Floating cat logo in top-right corner -->
+  <!-- Make sure Jesse.png is in the same folder as this file -->
+  <img src="Jesse.png" alt="Jesse the cat" class="corner-logo" />
+
+  <!-- Page header -->
   <header class="page-header">
     <div class="header-left">
       <h1>Hormones &amp; Behavior</h1>
       <p class="subtitle">Developmental pathways overview</p>
     </div>
-    <div class="header-right">
-      <!-- Make sure Jesse.png is in the same folder as this HTML file -->
-      <img src="Jesse.png" alt="Jesse logo" class="site-logo" />
-    </div>
   </header>
 
   <!-- Disorder selector + info box -->
-  <div class="disorder-panel">
+  <section class="disorder-panel">
     <div class="disorder-input-block">
-      <label for="disorder-select"><strong>Select a disorder:</strong></label>
+      <label for="disorder-select"><strong>Select a condition / disorder:</strong></label>
+
       <div class="disorder-input-row">
         <select id="disorder-select">
           <option value="NONE">Normal</option>
           <option value="FIVE_ALPHA_DEF">5-alpha reductase deficiency</option>
           <option value="AIS">Androgen insensitivity syndrome</option>
-          <option value="CAH">CAH</option>
+          <option value="CAH">Congenital adrenal hyperplasia (CAH)</option>
           <option value="XX_SRY_TRANSLOCATION">XX + SRY (phenotypic male)</option>
           <option value="XY_NO_SRY">XY no SRY (phenotypic female)</option>
           <option value="HERMAPHRODITISM">Hermaphroditism</option>
-          <option value="TRISOMES">Trisomes (XXY / XYY)</option>
+          <!-- One entry, internally mapped to DISORDERS.XXY in script.js -->
+          <option value="XXY">Trisomes (XXY / XYY)</option>
         </select>
       </div>
 
@@ -44,7 +45,7 @@
         </p>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- Legend -->
   <section class="legend-card" aria-label="Diagram legend">
@@ -53,44 +54,36 @@
 
       <div class="legend-item">
         <span class="legend-swatch legend-swatch--green"></span>
-        <span class="legend-label">
-          Green arrows: negative feedback
-        </span>
+        <span class="legend-label">Green arrows: negative feedback</span>
       </div>
 
       <div class="legend-item">
         <span class="legend-swatch legend-swatch--maroon"></span>
-        <span class="legend-label">
-          Maroon arrows: promote / stimulate
-        </span>
+        <span class="legend-label">Maroon arrows: promote / stimulate</span>
       </div>
 
       <div class="legend-item">
         <span class="legend-swatch legend-swatch--red"></span>
         <span class="legend-label">
-          Under GnRH, red text: XX female pathway
+          Under GnRH: red label = XX (female) pathway
         </span>
       </div>
 
       <div class="legend-item">
         <span class="legend-swatch legend-swatch--blue"></span>
         <span class="legend-label">
-          Under GnRH, blue text: XY male pathway
+          Under GnRH: blue label = XY (male) pathway
         </span>
       </div>
 
       <div class="legend-item">
         <span class="legend-swatch legend-swatch--purple-box"></span>
-        <span class="legend-label">
-          Purple boxes: sexual differentiation
-        </span>
+        <span class="legend-label">Purple boxes: sexual differentiation</span>
       </div>
 
       <div class="legend-item">
         <span class="legend-swatch legend-swatch--orange-outline"></span>
-        <span class="legend-label">
-          Thin orange outline: enzymes
-        </span>
+        <span class="legend-label">Thin orange outline: enzymes</span>
       </div>
 
     </div>
@@ -109,7 +102,6 @@
     </div>
   </main>
 
-  <!-- Main interaction logic -->
   <script src="script.js"></script>
 </body>
 </html>
