@@ -137,9 +137,9 @@ function injectSvgStyles() {
     /* Overlays live in their own <g> layer and do NOT change original boxes */
 
     .highlight-overlay {
-      fill: #fff7b0;
+      fill: #ffb0fae9;
       fill-opacity: 0.6;
-      stroke: #ff9800;
+      stroke: #ff00f2ff;
       stroke-width: 3;
       rx: 4;
       ry: 4;
@@ -147,9 +147,9 @@ function injectSvgStyles() {
     }
 
     .upregulated-overlay {
-      fill: #ffe0e0;
+      fill: #ede0ffff;
       fill-opacity: 0.6;
-      stroke: #d32f2f;
+      stroke: #582fd3ff;
       stroke-width: 3;
       rx: 4;
       ry: 4;
